@@ -1,20 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 100vw;
     color: #111;
+    line-height: 1.2;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 section h2 {
     text-transform: uppercase;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 
@@ -26,14 +26,14 @@ button {
 }
 
 header {
-    padding: 4px 4vw;
+    padding: 0 10px;
     display: flex;
+    justify-content: space-between;
     height: 50px;
     position: sticky;
     z-index: 1;
     top: 0;
     background-color: white;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
 }
@@ -44,18 +44,28 @@ header>a {
 }
 
 header>button {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 30px;
     background-size: cover;
     background-repeat: no-repeat;
+
+}
+
+.link {
+    height: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #222222;
+    display: flex;
+    align-items: center;
 }
 
 .more-button {
-    background-image: url(assets/menu.svg);
+    background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png);
 }
 
 .search-button {
-    background-image: url(assets/search.svg);
+    background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png);
 }
 
 .slide {
@@ -63,9 +73,9 @@ header>button {
 }
 
 .slide>img {
-    height: calc(100vh - 77px);
+    height: calc(100vh - 50px);
     object-fit: cover;
-    width: 100vw;
+    width: 100%;
 }
 
 .slide>a {
@@ -84,6 +94,7 @@ header>button {
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     color: white;
+    text-transform: none;
 }
 
 .slide>a>button {
@@ -94,7 +105,7 @@ header>button {
     border: 2px solid white;
 }
 
-.slides-section>button {
+#slides-section>button {
     position: absolute;
     top: 50%;
     padding: 16px;
@@ -114,9 +125,9 @@ header>button {
     transform: rotate(-90deg);
 }
 
-.about-section {
+#about-section {
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     margin: 0 auto 0 auto;
     display: flex;
     justify-content: space-evenly;
@@ -124,7 +135,7 @@ header>button {
     flex-wrap: wrap;
 }
 
-.about-section>div{
+#about-section>div{
     max-width: 400px;
     min-width: 280px;
     font-size: 18px;
@@ -140,10 +151,130 @@ header>button {
     font-weight: normal;
 }
 
-.stories-section {
+#stories-section {
     background-color: beige;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#stories-section > .link{
+    margin-top: 30px;
+}
+
+#stories-section > h2, #posts-section>h2 {
+    border-top: 2px solid grey;
+    padding-top: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cards > a {
+    width: 47%;
+    margin-top: 25px;
+    background-color: white;
+}
+
+.cards > a > img {
+    width: 100%;
+    height: auto;
+}
+
+.cards > a > .desc {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+
+.desc> .category {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #999;
+    font-family: 'Poppins', sans-serif;
+    height: 15px;
+    margin-top: 7px;
+}
+
+.desc > h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    height: 1px;
+}
+
+.desc > p {
+    font-family: sans-serif;
+}
+
+.desc > time {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#films-section {
+    background-color: #ddd;
+    text-align: center;
+    padding: 20px;
+}
+
+#films-section>h2{
+    margin-bottom: 30px;
+}
+
+.cards>iframe {
+    width: 45%;
+}
+
+#posts-section {
+    padding: 20px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#posts-section a {
+    width: 200px;
+    height: 300px;
+    font-size: 14px;
+    margin: 10px;
+}
+
+#posts-section h3 {
+    font-size: 16px;
+}
+
+#posts-section p {
+    font-family: sans-serif;
+}
+
+#posts-section a > img {
+    object-fit: cover;
+    height: 150px;
+}
+
+footer {
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer>a, footer>p {
+    margin: 4px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #222;
 }
