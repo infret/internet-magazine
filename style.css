@@ -1,9 +1,12 @@
+:focus {
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     color: #111;
     line-height: 1.2;
-    width: 100%;
 }
 
 a {
@@ -55,6 +58,7 @@ header>button {
     height: 20px;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+    font-size: 15px;
     color: #222222;
     display: flex;
     align-items: center;
@@ -66,6 +70,13 @@ header>button {
 
 .search-button {
     background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png);
+}
+
+#slides-section {
+    background-color: white;
+    opacity: 1;
+    z-index: 0;
+    transition: background 1.5s .25s;
 }
 
 .slide {
@@ -83,7 +94,6 @@ header>button {
     flex-direction: column;
     align-items: center;
     top: 60%;
-    width: 500px;
     margin: 0 auto 0 auto;
     right: 0;
     left: 0;
@@ -159,6 +169,39 @@ header>button {
     align-items: center;
 }
 
+select > option {
+    padding: 6px;
+    background-color: beige;
+}
+
+.options {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.options > select {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 300px;
+    margin: 20px;
+}
+
+.options > div {
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
 #stories-section > .link{
     margin-top: 30px;
 }
@@ -170,6 +213,10 @@ header>button {
     text-align: center;
 }
 
+.cards > a:hover {
+    opacity: 0.5;
+}
+
 .cards {
     display: flex;
     justify-content: space-evenly;
@@ -178,7 +225,7 @@ header>button {
 
 .cards > a {
     width: 47%;
-    margin-top: 25px;
+    margin-top: 20px;
     background-color: white;
 }
 
@@ -226,12 +273,9 @@ header>button {
     padding: 20px;
 }
 
-#films-section>h2{
-    margin-bottom: 30px;
-}
-
 .cards>iframe {
     width: 45%;
+    margin: 10px;
 }
 
 #posts-section {
@@ -242,24 +286,35 @@ header>button {
     align-items: center;
 }
 
-#posts-section a {
-    width: 200px;
-    height: 300px;
+#posts-section > .cards {
+    flex-wrap: nowrap;
+}
+
+#posts-section > .cards > a {
+    width: 20%;
+    max-width: 250px;
+    max-height: 330px;
     font-size: 14px;
-    margin: 10px;
+    margin: 15px;
 }
 
 #posts-section h3 {
     font-size: 16px;
+    height: 16px;
 }
 
 #posts-section p {
     font-family: sans-serif;
 }
 
-#posts-section a > img {
+#posts-section > .cards > a > img {
     object-fit: cover;
     height: 150px;
+}
+
+#posts-section > a {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 footer {
@@ -277,4 +332,40 @@ footer>a, footer>p {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #222;
+}
+
+@media (max-width: 720px) {
+    header .link {
+        display: none;
+    }
+
+    .next, .prev {
+        display: none;
+    }
+
+    .cards a {
+        width: 90%;
+    }
+
+    #posts-section .cards {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #posts-section > .cards > a {
+        height: 200px;
+        width: 200px;
+    }
+    #posts-section > .cards > a > .desc {
+        display: none;
+    }
+    #posts-section > .cards > a > img {
+        height: 200px;
+        max-width: 200px;
+        width: 200px;
+    }
+
+    #films-section iframe {
+        width: 90%;
+    }
 }
