@@ -2,23 +2,21 @@
     outline: none;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
-    color: #111;
+}
+
+body {
+    font-family: sans-serif;
+    color: #222;
     line-height: 1.2;
 }
 
 a {
     text-decoration: none;
-    color: black;
     cursor: pointer;
-}
-
-section h2 {
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    color: #222;
 }
 
 button {
@@ -26,42 +24,66 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-transform: uppercase;
+    margin: 12px;
 }
 
 header {
-    padding: 0 10px;
     display: flex;
     justify-content: space-between;
-    height: 50px;
     position: sticky;
     z-index: 1;
     top: 0;
     background-color: white;
     align-items: center;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-header>a {
-    text-transform: lowercase;
-    font-family: 'Playfair Display', serif;
+header h1 {
+    font-family: serif;
 }
 
-header>button {
+header > button {
     width: 26px;
-    height: 30px;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    height: 26px;
 }
 
 .link {
     height: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
     font-size: 15px;
-    color: #222222;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
+    font-weight: bold;
+    max-width: 200px;
+    margin: 12px;
+}
+
+h2 {
+    font-family: serif;
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 20px;
+    font-family: serif;
+}
+
+select {
+    text-transform: uppercase;
+    padding: 6px;
+    background-color: beige;
+    border: none;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    width: 300px;
+    margin-top: 24px;
+}
+
+section {
+    padding: 24px;
 }
 
 .more-button {
@@ -72,57 +94,40 @@ header>button {
     background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png);
 }
 
-#slides-section {
-    background-color: white;
-    opacity: 1;
-    z-index: 0;
-    transition: background 1.5s .25s;
-}
-
-.slide {
-    display: none;
-}
-
-.slide>img {
+.slide > img {
     height: calc(100vh - 50px);
     object-fit: cover;
     width: 100%;
 }
 
-.slide>a {
+.slide div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 60%;
-    margin: 0 auto 0 auto;
-    right: 0;
-    left: 0;
     position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
-.slide>a>h2 {
-    font-family: 'Playfair Display', serif;
+.slide h2 {
     font-size: 40px;
     color: white;
-    text-transform: none;
 }
 
-.slide>a>button {
-    text-transform: uppercase;
+.slide .link {
     color: white;
-    font-weight: bold;
-    padding: 8px 16px;
+    padding: 12px;
     border: 2px solid white;
 }
 
-#slides-section>button {
+#slides-section > button {
     position: absolute;
     top: 50%;
-    padding: 16px;
+    padding: 12px;
     color: white;
     font-weight: bold;
-    transition: 0.6s ease;
-    text-transform: uppercase;
 }
 
 .next {
@@ -136,81 +141,50 @@ header>button {
 }
 
 #about-section {
-    background-color: white;
-    padding: 20px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#about-section>div{
+#about-section > div {
     max-width: 400px;
     min-width: 280px;
-    font-size: 18px;
+    margin: 12px;
 }
 
-.slogan>p {
-    font-family: 'Playfair Display', serif;
+.slogan > p {
+    font-family: serif;
     font-size: 30px;
     font-weight: bold;
 }
 
-.slogan>p>i {
+.slogan > p > i {
     font-weight: normal;
 }
 
 #stories-section {
     background-color: beige;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-select > option {
-    padding: 6px;
-    background-color: beige;
 }
 
 .options {
     display: flex;
     width: 90%;
     flex-wrap: wrap;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     justify-content: space-evenly;
     align-items: center;
-}
-
-.options > select {
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #222;
-    font-family: 'Poppins', sans-serif;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid grey;
-    width: 300px;
-    margin: 20px;
 }
 
 .options > div {
     display: flex;
     width: 300px;
     justify-content: space-evenly;
-    margin: 20px;
-}
-
-#stories-section > .link{
-    margin-top: 30px;
-}
-
-#stories-section > h2, #posts-section>h2 {
-    border-top: 2px solid grey;
-    padding-top: 10px;
-    width: 200px;
-    text-align: center;
+    margin-top: 12px;
 }
 
 .cards > a:hover {
@@ -221,69 +195,58 @@ select > option {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 12px;
 }
 
 .cards > a {
-    width: 47%;
-    margin-top: 20px;
+    margin: 12px;
+    width: 45%;
     background-color: white;
 }
 
 .cards > a > img {
-    width: 100%;
     height: auto;
+    width: 100%;
 }
 
-.cards > a > .desc {
-    display: flex;
-    flex-direction: column;
-    padding: 5px 20px;
+.desc {
+    padding: 12px;
 }
 
-.desc> .category {
+.desc > * {
+    margin: 6px;
+}
+
+.desc > .category {
     display: flex;
     align-items: center;
     text-transform: uppercase;
     font-size: 13px;
-    color: #999;
-    font-family: 'Poppins', sans-serif;
-    height: 15px;
-    margin-top: 7px;
-}
-
-.desc > h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    height: 1px;
-}
-
-.desc > p {
-    font-family: sans-serif;
+    color: grey;
 }
 
 .desc > time {
-    font-family: 'Playfair Display', serif;
+    font-family: serif;
     font-style: italic;
     font-weight: bold;
 }
 
 #films-section {
-    background-color: #ddd;
+    background-color: gainsboro;
     text-align: center;
-    padding: 20px;
 }
 
-.cards>iframe {
+.cards > iframe {
     width: 45%;
-    margin: 10px;
+    margin: 12px;
 }
 
 #posts-section {
-    padding: 20px;
     background-color: beige;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 15px;
 }
 
 #posts-section > .cards {
@@ -293,18 +256,6 @@ select > option {
 #posts-section > .cards > a {
     width: 20%;
     max-width: 250px;
-    max-height: 330px;
-    font-size: 14px;
-    margin: 15px;
-}
-
-#posts-section h3 {
-    font-size: 16px;
-    height: 16px;
-}
-
-#posts-section p {
-    font-family: sans-serif;
 }
 
 #posts-section > .cards > a > img {
@@ -312,34 +263,23 @@ select > option {
     height: 150px;
 }
 
-#posts-section > a {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
 footer {
-    height: 200px;
-    background-color: #ddd;
+    min-height: 100px;
+    background-color: gainsboro;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 24px
 }
 
-footer>a, footer>p {
-    margin: 4px;
+footer * {
+    margin: 0 12px;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #222;
 }
 
-@media (max-width: 720px) {
-    header .link {
-        display: none;
-    }
-
-    .next, .prev {
+@media (max-width: 800px) {
+    header .link, .next, .prev, #posts-section > .cards > a > .desc {
         display: none;
     }
 
@@ -353,16 +293,14 @@ footer>a, footer>p {
     }
 
     #posts-section > .cards > a {
-        height: 200px;
-        width: 200px;
+        height: 30vw;
+        width: 30vw;
+        max-width: 220px;
     }
-    #posts-section > .cards > a > .desc {
-        display: none;
-    }
+
     #posts-section > .cards > a > img {
-        height: 200px;
-        max-width: 200px;
-        width: 200px;
+        width: 100%;
+        height: 100%;
     }
 
     #films-section iframe {

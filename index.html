@@ -6,10 +6,6 @@
 				content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
 	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 	<link rel='stylesheet' href='style.css'>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 	<title>Magazine</title>
 </head>
 <body>
@@ -18,32 +14,32 @@
 	<a class='link'>
 		<p>Shop</p>
 		<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-				 alt='icon'/>
+				 alt=''/>
 	</a>
 	<a href='#'>
 		<h1>Magazine</h1>
 	</a>
 	<a class='link'>
 		<p>Cart</p>
-		<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt='Icon'/>
+		<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/>
 	</a>
 	<button class='search-button'></button>
 </header>
 <main>
-	<section id='slides-section'>
+	<div id='slides-section'>
 		<div class='slide'>
 			<img src='https://images.unsplash.com/photo-1482784160316-6eb046863ece?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80'
 					 alt='Starry night in the mountains'/>
-			<a href='#'>
+			<div class='ban'>
 				<h2>Sons of Earth</h2>
-				<button>Read this story</button>
-			</a>
+				<a class='link'>Read this story</a>
+			</div>
 		</div>
 		<div class='slide'>
 			<img src='https://images.unsplash.com/photo-1553671715-350ab3b6e9ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1568&q=80'
 					 alt='Lone kayak on the beach'/>
 			<a href='#'>
-				<h2>Beauty of solitude</h2>
+				<h2 class='heading'>Beauty of solitude</h2>
 				<button>Read this story</button>
 			</a>
 		</div>
@@ -51,21 +47,20 @@
 			<img src='https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80'
 					 alt='Balloons in the sky'/>
 			<a href='#'>
-				<h2>Life-long journey</h2>
+				<h2 class='heading'>Life-long journey</h2>
 				<button>Read this story</button>
 			</a>
 		</div>
-		<button class='prev' onclick='plusSlides(-1)'>Prev</button>
-		<button class='next' onclick='plusSlides(1)'>Next</button>
-	</section>
+		<button class='prev' onclick='showSlides(slideIndex -= 1)'>Prev</button>
+		<button class='next' onclick='showSlides(slideIndex += 1)'>Next</button>
+	</div>
 	<section id='about-section'>
 		<div class='slogan'>
 			<p>design<i> and </i>travel</p>
 		</div>
 		<div>
-			<h2 class='title'>About us</h2>
-			<p>Magazine celebrates artists, designers, and entrepreneurs while exploring the history of design through
-				travel.</p>
+			<h2>About us</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti mollitia quia quisquam rem repellendus.</p>
 		</div>
 	</section>
 	<section id='stories-section'>
@@ -83,13 +78,13 @@
 				<a class='link' href='#films-section'>
 					<p>See films</p>
 					<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-							 alt='Icon'/>
+							 alt=''/>
 
 				</a>
 				<a class='link' href='#stories-section'>
 					<p>See stories</p>
 					<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-							 alt='Icon'/>
+							 alt=''/>
 				</a>
 			</div>
 		</div>
@@ -158,7 +153,7 @@
 		<a class='link' href='#'>
 			<p>More stories</p>
 			<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-					 alt='icon'/></a>
+					 alt=''/></a>
 	</section>
 	<section id='films-section'>
 		<h2>Selected films</h2>
@@ -172,7 +167,7 @@
 		</div>
 	</section>
 	<section id='posts-section'>
-		<h2>Featured posts</h2>
+		<h2 class='heading'>Featured posts</h2>
 		<div class='cards'>
 			<a href='#'>
 				<img src='https://images.unsplash.com/photo-1568583922678-3d514ca09711?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80'
@@ -191,10 +186,10 @@
 				</div>
 			</a>
 			<a href='#'>
-				<img src='https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
-						 alt='Graffiti'/>
+				<img src='https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80'
+						 alt='Painting'/>
 				<div class='desc'>
-					<h3>Middle of nowhere</h3>
+					<h3>Self-expression</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, quia.</p>
 				</div>
 			</a>
@@ -209,7 +204,7 @@
 		</div>
 		<a class='link'>
 			<p>Visit blog</p>
-			<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt='Icon'/>
+			<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/>
 		</a>
 	</section>
 </main>
@@ -219,21 +214,17 @@
 	<a>FAQ</a>
 	<a>Terms & Conditions</a>
 	<p>&#169; Magazine</p>
-	<p>Made by <a>Vlad Pechkin</a></p>
+	<a>Made by Vlad Pechkin</a>
 </footer>
 </body>
 </html>
 
 <script>
-	var slideIndex = 1;
+	let slideIndex = 1;
+
 	showSlides(slideIndex);
 
-	function plusSlides(n) {
-		showSlides(slideIndex += n);
-	}
-
 	function showSlides(n) {
-		var i;
 		var slides = document.querySelectorAll(".slide");
 		if (n > slides.length) {
 			slideIndex = 1
@@ -241,7 +232,7 @@
 		if (n < 1) {
 			slideIndex = slides.length
 		}
-		for (i = 0; i < slides.length; i++) {
+		for (let i = 0; i < slides.length; i++) {
 			slides[i].style.display = "none";
 		}
 		slides[slideIndex - 1].style.display = "block";
