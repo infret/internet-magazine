@@ -2,71 +2,51 @@
 <html lang='en'>
 <head>
 	<meta charset='UTF-8'>
-	<meta name='viewport'
-				content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+	<meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
 	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 	<link rel='stylesheet' href='style.css'>
-	<title>Magazine</title>
+	<title>Internet magazine</title>
 </head>
 <body>
-<header>
-	<button class='more-button'></button>
-	<a class='link'>
-		<p>Shop</p>
-		<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-				 alt=''/>
-	</a>
-	<a href='#'>
-		<h1>Magazine</h1>
-	</a>
-	<a class='link'>
-		<p>Cart</p>
-		<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/>
-	</a>
-	<button class='search-button'></button>
+<header class='header'>
+	<button class='header__button_more'></button>
+	<a class='header__link link'>Shop<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
+	<a class='header__logo' href='#'>Magazine</a>
+	<a class='header__link link'>Cart<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
+	<button class='header__button_search'></button>
 </header>
 <main>
-	<div id='slides-section'>
+	<section id='section_slides'>
 		<div class='slide'>
-			<img src='https://images.unsplash.com/photo-1482784160316-6eb046863ece?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80'
-					 alt='Starry night in the mountains'/>
-			<div class='ban'>
-				<h2>Sons of Earth</h2>
-				<a class='link'>Read this story</a>
-			</div>
+			<img class='slide__img' src='https://images.unsplash.com/photo-1482784160316-6eb046863ece?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80' alt='Starry night in the mountains'/>
+			<h2 class='slide__heading'>Sons of Earth</h2>
+			<a class='slide__button'>Read this story</a>
 		</div>
 		<div class='slide'>
-			<img src='https://images.unsplash.com/photo-1553671715-350ab3b6e9ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1568&q=80'
-					 alt='Lone kayak on the beach'/>
-			<a href='#'>
-				<h2 class='heading'>Beauty of solitude</h2>
-				<button>Read this story</button>
-			</a>
+			<img class='slide__img' src='https://images.unsplash.com/photo-1553671715-350ab3b6e9ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1568&q=80' alt='Lone kayak on the beach'/>
+			<h2 class='slide__heading'>Beauty of solitude</h2>
+			<a class='slide__button'>Read this story</a>
 		</div>
 		<div class='slide'>
-			<img src='https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80'
-					 alt='Balloons in the sky'/>
-			<a href='#'>
-				<h2 class='heading'>Life-long journey</h2>
-				<button>Read this story</button>
-			</a>
+			<img class='slide__img' src='https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80' alt='Balloons in the sky'/>
+			<h2 class='slide__heading'>Life-long journey</h2>
+			<a class='slide__button'>Read this story</a>
 		</div>
-		<button class='prev' onclick='showSlides(slideIndex -= 1)'>Prev</button>
-		<button class='next' onclick='showSlides(slideIndex += 1)'>Next</button>
-	</div>
-	<section id='about-section'>
-		<div class='slogan'>
-			<p>design<i> and </i>travel</p>
-		</div>
-		<div>
-			<h2>About us</h2>
+		<button class='slide__button_prev' onclick='showSlides(slideIndex -= 1)'>Prev</button>
+		<button class='slide__button_next' onclick='showSlides(slideIndex += 1)'>Next</button>
+	</section>
+	<section id='section_about' class='section'>
+		<div class='section_about__logo'>design<i> and </i>travel</div>
+		<div class='section_about__desc'>
+			<h2 class='heading'>About us</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti mollitia quia quisquam rem repellendus.</p>
 		</div>
 	</section>
-	<section id='stories-section'>
-		<h2>The stories</h2>
-		<div class='options'>
-			<select>
+	<section id='section_stories' class='section'>
+		<h2 class='heading'>The stories</h2>
+		<div class='section_stories__options'>
+			<a class='link' href='#section_stories'>See stories<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
+			<select class='select'>
 				<option value="">Sort by</option>
 				<option value="apparel">Apparel</option>
 				<option value="architecture">Architecture</option>
@@ -74,156 +54,102 @@
 				<option value="barber">Barber</option>
 				<option value="bees">Bees</option>
 			</select>
-			<div>
-				<a class='link' href='#films-section'>
-					<p>See films</p>
-					<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-							 alt=''/>
-
-				</a>
-				<a class='link' href='#stories-section'>
-					<p>See stories</p>
-					<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-							 alt=''/>
-				</a>
-			</div>
+			<a class='link ' href='#section_films'>See films<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
 		</div>
 		<div class='cards'>
-			<a>
-				<img src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-						 alt='Smiling man'>
-				<div class='desc'>
-					<div class='category'>
-						<h4>Bob Martin</h4>
-						<pre> | </pre>
-						<h4>Art</h4>
-					</div>
-					<h3>Who are you?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam
-						quidem quos totam ullam ut veritatis.</p>
-					<time>12.19.20</time>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='Smiling man'>
+				<article class='card__desc'>
+					<h4 class='card__author'>Bob Martin</h4>
+					<h3 class='card__heading heading'>Who are you?</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam quidem quos totam ullam ut veritatis.</p>
+					<p class='card__date'>12.19.20</p>
+				</article>
 			</a>
-			<a>
-				<img src='https://images.unsplash.com/photo-1531824630324-dae08d384230?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-						 alt='Clay wall'>
-				<div class='desc'>
-					<div class='category'>
-						<h4>Naturelle</h4>
-						<pre> | </pre>
-						<h4>Architecture</h4>
-					</div>
-					<h3>Closer to nature</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam
-						quidem quos totam ullam ut veritatis.</p>
-					<time>11.11.19</time>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1531824630324-dae08d384230?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='Clay wall'>
+				<article class='card__desc'>
+					<h4 class='card__author'>Naturelle Inc.</h4>
+					<h3 class='card__heading heading'>Closer to nature</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam quidem quos totam ullam ut veritatis.</p>
+					<p class='card__date'>11.11.19</p>
+				</article>
 			</a>
-			<a>
-				<img src='https://images.unsplash.com/photo-1508445861827-7711f397113a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
-						 alt='Smiling woman'>
-				<div class='desc'>
-					<div class='category'>
-						<h4>Alice Smith</h4>
-						<pre> | </pre>
-						<h4>Entrepreneur</h4>
-					</div>
-					<h3>Wonderland</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam
-						quidem quos totam ullam ut veritatis.</p>
-					<time>1.30.19</time>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1508445861827-7711f397113a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='Smiling woman'>
+				<article class='card__desc'>
+					<h4 class='card__author'>Alice Smith</h4>
+					<h3 class='card__heading heading'>Wonderland</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam quidem quos totam ullam ut veritatis.</p>
+					<p class='card__date'>1.30.19</p>
+				</article>
 			</a>
-			<a>
-				<img src='https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-						 alt='Man in the forest'>
-				<div class='desc'>
-					<div class='category'>
-						<h4>John Turner</h4>
-						<pre> | </pre>
-						<h4>Photographer</h4>
-					</div>
-					<h3>On the road</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam
-						quidem quos totam ullam ut veritatis.</p>
-					<time>2.21.19</time>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='Man in the forest'>
+				<article class='card__desc'>
+					<h4 class='card__author'>John Turner</h4>
+					<h3 class='card__heading heading'>On the road</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ipsum laboriosam placeat quaerat quam quidem quos totam ullam ut veritatis.</p>
+					<p class='card__date'>2.21.19</p>
+				</article>
 			</a>
 		</div>
-		<a class='link' href='#'>
-			<p>More stories</p>
-			<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png'
-					 alt=''/></a>
+		<a class='link' href='#'>More stories<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
 	</section>
-	<section id='films-section'>
-		<h2>Selected films</h2>
+	<section id='section_films' class='section'>
+		<h2 class='heading'>Selected films</h2>
 		<div class='cards'>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/uivL-tpxSDg" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/BZYTlfPTJYU" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
+			<iframe class='card' width="560" height="315" src="https://www.youtube.com/embed/uivL-tpxSDg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe class='card' width="560" height="315" src="https://www.youtube.com/embed/BZYTlfPTJYU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</section>
-	<section id='posts-section'>
+	<section id='section_posts' class='section'>
 		<h2 class='heading'>Featured posts</h2>
 		<div class='cards'>
-			<a href='#'>
-				<img src='https://images.unsplash.com/photo-1568583922678-3d514ca09711?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80'
-						 alt='Peaches in baskets'/>
-				<div class='desc'>
-					<h3>Juice shop</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, magni!</p>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1568583922678-3d514ca09711?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80' alt='Peaches in baskets'/>
+				<article class='card__desc'>
+					<h3 class='card__heading heading'>Juice shop</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur dignissimos, illo in iure laboriosam magni odio provident repellat voluptatibus?</p>
+				</article>
 			</a>
-			<a href='#'>
-				<img src='https://images.unsplash.com/photo-1501420896719-ad7fe0ee297e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-						 alt='Wooden tableware'/>
-				<div class='desc'>
-					<h3>Made with love</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, minus?</p>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1501420896719-ad7fe0ee297e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='Wooden tableware'/>
+				<article class='card__desc'>
+					<h3 class='card__heading heading'>Made with love</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dignissimos eaque eligendi error ipsam, molestiae quod. Fugiat quasi quia vitae!</p>
+				</article>
 			</a>
-			<a href='#'>
-				<img src='https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80'
-						 alt='Painting'/>
-				<div class='desc'>
-					<h3>Self-expression</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, quia.</p>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80' alt='Painting'/>
+				<article class='card__desc'>
+					<h3 class='card__heading heading'>Self-expression</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur consequuntur explicabo ipsum nam quia quidem ratione soluta tempore vel, vero.</p>
+				</article>
 			</a>
-			<a href='#'>
-				<img src='https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-						 alt='Canyon'/>
-				<div class='desc'>
-					<h3>Born of nature</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, placeat?</p>
-				</div>
+			<a class='card' href='#'>
+				<img class='card__img' src='https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='Canyon'/>
+				<article class='card__desc'>
+					<h3 class='card__heading heading'>Born of nature</h3>
+					<p class='card__text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt dolore dolorum est impedit iste laboriosam quasi quia unde voluptas?</p>
+				</article>
 			</a>
 		</div>
-		<a class='link'>
-			<p>Visit blog</p>
-			<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/>
-		</a>
+		<a class='link'>Visit blog<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-24.png' alt=''/></a>
 	</section>
 </main>
-<footer>
-	<a>Collaborate With Us</a>
-	<a>Contact Us</a>
-	<a>FAQ</a>
-	<a>Terms & Conditions</a>
-	<p>&#169; Magazine</p>
-	<a>Made by Vlad Pechkin</a>
+<footer class='footer'>
+	<a class='link'>Collaborate With Us</a>
+	<a class='link'>Contact Us</a>
+	<a class='link'>FAQ</a>
+	<a class='link'>Terms & Conditions</a>
+	<a class='link'>Made by Vlad Pechkin</a>
 </footer>
 </body>
 </html>
 
 <script>
-	let slideIndex = 1;
-
-	showSlides(slideIndex);
-
+	showSlides(slideIndex = 1);
 	function showSlides(n) {
 		var slides = document.querySelectorAll(".slide");
 		if (n > slides.length) {
