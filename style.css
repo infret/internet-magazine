@@ -9,6 +9,7 @@ body {
     line-height: 1.2;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 a {
@@ -27,14 +28,14 @@ a {
     padding: 12px 6px 12px 12px;
 }
 
-.link:hover, .select:hover, .header__button_more:hover, .header__button_search:hover {
-    transition: 0.05s ease;
+.link:hover, .card:hover, .select:hover, .header__button_more:hover, .header__button_search:hover {
+    transition: 0.1s ease-in-out;
     opacity: 50%;
 }
 
 .heading {
     font-family: serif;
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .select {
@@ -43,7 +44,8 @@ a {
     background-color: beige;
     border: none;
     font-weight: bold;
-    border-bottom: 1px solid grey;
+    font-size: 15px;
+    width: 100px;
 }
 
 .section {
@@ -91,7 +93,7 @@ a {
     object-fit: cover;
     width: 100%;
     opacity: 20%;
-    animation: slide-in 1s forwards;
+    animation: slide-in 2s forwards;
 }
 
 @keyframes slide-in {
@@ -99,9 +101,9 @@ a {
 }
 
 .slide__heading {
-    width: 400px;
+    width: 300px;
     text-align: center;
-    font-size: 40px;
+    font-size: 36px;
     color: white;
     font-family: serif;
     position: absolute;
@@ -142,7 +144,7 @@ a {
 .slide__button:hover, .slide__button_next:hover, .slide__button_prev:hover {
     background-color: white;
     color: #222;
-    transition: 0.1s ease;
+    transition: 0.1s ease-in-out;
 }
 
 .slide__button_next {
@@ -202,12 +204,8 @@ a {
     margin: 12px;
     width: 45%;
     background-color: white;
-    border: 0;
+    border: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover {
-    opacity: 0.5;
 }
 
 .card__img {
@@ -272,6 +270,7 @@ a {
     }
 
     .card {
-        width: 90%;
+        width: 100%;
+        margin: 12px 0;
     }
 }
