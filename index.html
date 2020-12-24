@@ -9,12 +9,20 @@
 </head>
 <body>
 <header class='header'>
-	<button class='header__button_more'></button>
+	<button class='header__button_more' onclick="toggleNavbar()"></button>
 	<a class='header__link link'>Shop</a>
 	<a class='header__logo' href='#'>Magazine</a>
 	<a class='header__link link'>Cart</a>
 	<button class='header__button_search'></button>
 </header>
+<nav class='navbar'>
+	<a href='#section_stories' class='link navbar__link'>Stories</a>
+	<a href='#section_films' class='link navbar__link'>Films</a>
+	<a href='#' class='link navbar__link'>Shop</a>
+	<a href='#section_posts' class='link navbar__link'>Blog</a>
+	<a href='#section_about' class='link navbar__link'>About</a>
+	<a href='#' class='navbar__button'>Request interview</a>
+</nav>
 <main>
 	<section id='section_slides'>
 		<div class='slide'>
@@ -149,9 +157,11 @@
 </html>
 
 <script>
+	let slideIndex
 	showSlides(slideIndex = 1);
+
 	function showSlides(n) {
-		var slides = document.querySelectorAll(".slide");
+		let slides = document.querySelectorAll(".slide");
 		if (n > slides.length) {
 			slideIndex = 1
 		}
@@ -162,5 +172,17 @@
 			slides[i].style.display = "none";
 		}
 		slides[slideIndex - 1].style.display = "block";
+	}
+
+	function toggleNavbar() {
+		let navbar = document.querySelector('.navbar')
+		let button = document.querySelector('.header__button_more')
+		if (navbar.style.display === 'flex') {
+			navbar.style.display = 'none'
+			button.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
+		} else {
+			navbar.style.display = 'flex'
+			button.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
+		}
 	}
 </script>

@@ -8,18 +8,19 @@
 
 body {
     font-family: sans-serif;
-    color: #222;
     line-height: 1.2;
     margin: 0;
     padding: 0;
     height: 100vh;
     --beige: #fafae0;
+    --black: #222;
+    color: var(--black)
 }
 
 a {
     text-decoration: none;
     cursor: pointer;
-    color: #222;
+    color: var(--black)
 }
 
 .link {
@@ -29,28 +30,29 @@ a {
     display: flex;
     align-items: center;
     font-weight: bold;
-    padding: 12px 6px 12px 12px;
+    padding: 6px;
     position: relative;
+    margin: 12px;
 }
 
 .link::before{
     content: '';
-    height: 8px;
+    height: 7px;
     width: 2px;
     position: absolute;
     right: -6px;
     background-color: black;
     transform: rotate(-45deg);
-    top: 6px;
+    top: 5px;
 }
 
 .link::after{
     content: '';
-    height: 8px;
+    height: 7px;
     width: 2px;
     position: absolute;
     right: -6px;
-    bottom: 6px;
+    bottom: 5px;
     background-color: black;
     transform: rotate(45deg);
 }
@@ -76,7 +78,7 @@ a {
     font-weight: bold;
     font-size: 15px;
     width: 100px;
-    color: #222;
+    color: var(--black)
 }
 
 .section {
@@ -113,6 +115,7 @@ a {
 }
 
 .header__button_more {
+    transition: 0.5s ease;
     background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png);
 }
 
@@ -163,7 +166,7 @@ a {
 .slide__button_next, .slide__button_prev {
     position: absolute;
     top: 50%;
-    padding: 12px;
+    padding: 6px;
     color: white;
     font-weight: bold;
     background-color: transparent;
@@ -173,9 +176,24 @@ a {
     cursor: pointer;
 }
 
-.slide__button:hover, .slide__button_next:hover, .slide__button_prev:hover {
+.slide__button_next::after, .slide__button_prev::after {
     background-color: white;
-    color: #222;
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.slide__button_next:hover::after, .slide__button_prev:hover::after{
+    width: 100%;
+}
+
+.slide__button:hover {
+    background-color: white;
+    color: var(--black)
 }
 
 .slide__button_next {
@@ -197,8 +215,7 @@ a {
 }
 
 .section_about__desc, .section_about__logo {
-    max-width: 400px;
-    min-width: 280px;
+    max-width: 300px;
     margin: 12px;
     position: relative;
 }
@@ -213,10 +230,10 @@ a {
     content: '';
     bottom: -10px;
     height: 3px;
-    width: 260px;
-    left: -20px;
-    border-radius: 20%;
-    transform: rotate(-3deg);
+    width: 100%;
+    left: 0;
+    border-radius: 100%;
+    transform: rotate(-2deg);
     position: absolute;
     background-color: grey;
 }
@@ -310,12 +327,12 @@ a {
 }
 
 #section_films {
-    background-color: #E4F2E9;
+    background-color: white;
     text-align: center;
 }
 
 #section_posts {
-    background-color: #fafae0;
+    background-color: var(--beige);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -329,6 +346,43 @@ a {
     align-items: center;
     flex-wrap: wrap;
     padding: 24px;
+}
+
+.navbar {
+    padding-top: 100px;
+    height: 100%;
+    transition: 1s ease;
+    display: none;
+    width: 100%;
+    background-color: white;
+    opacity: 98%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.navbar__link {
+    font-size: 30px;
+    margin: 20px;
+    font-weight: normal;
+}
+
+.navbar__link::after, .navbar__link::before {
+    display: none;
+}
+
+.navbar__button {
+    background-color: #4A8671;
+    text-align: center;
+    width: 200px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    padding: 12px;
+    margin-top: 50px;
 }
 
 @media (max-width: 720px) {
