@@ -9,20 +9,28 @@
 </head>
 <body>
 <header class='header'>
-	<button class='header__button_more' onclick="toggleNavbar()"></button>
+	<button class='header__button_more' onclick="toggle('nav')"></button>
 	<a class='header__link link'>Shop</a>
 	<a class='header__logo' href='#'>Magazine</a>
 	<a class='header__link link'>Cart</a>
-	<button class='header__button_search'></button>
+	<button class='header__button_search' onclick="toggle('search')"></button>
 </header>
 <nav class='navbar'>
-	<a href='#section_stories' class='link navbar__link'>Stories</a>
-	<a href='#section_films' class='link navbar__link'>Films</a>
-	<a href='#' class='link navbar__link'>Shop</a>
-	<a href='#section_posts' class='link navbar__link'>Blog</a>
-	<a href='#section_about' class='link navbar__link'>About</a>
-	<a href='#' class='navbar__button'>Request interview</a>
+	<div class='navbar__container'>
+		<a href='#section_stories' class='link navbar__link'>Stories</a>
+		<a href='#section_films' class='link navbar__link'>Films</a>
+		<a href='#' class='link navbar__link'>Shop</a>
+		<a href='#section_posts' class='link navbar__link'>Blog</a>
+		<a href='#section_about' class='link navbar__link'>About</a>
+		<a href='#' class='navbar__button'>Request interview</a>
+	</div>
 </nav>
+<div class='searchbar'>
+	<div class='searchbar__container'>
+		<input class='searchbar__input' type='text' placeholder='Search Magazine'/>
+		<button class='searchbar__button'></button>
+	</div>
+</div>
 <main>
 	<section id='section_slides'>
 		<div class='slide'>
@@ -174,15 +182,31 @@
 		slides[slideIndex - 1].style.display = "block";
 	}
 
-	function toggleNavbar() {
+	function toggle(element) {
 		let navbar = document.querySelector('.navbar')
-		let button = document.querySelector('.header__button_more')
-		if (navbar.style.display === 'flex') {
-			navbar.style.display = 'none'
-			button.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
-		} else {
-			navbar.style.display = 'flex'
-			button.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
+		let navbtn = document.querySelector('.header__button_more')
+		let searchbar = document.querySelector('.searchbar')
+		let searchbtn = document.querySelector('.header__button_search')
+		if (element === 'nav') {
+			searchbar.style.height = '0'
+			searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png)'
+			if (navbar.style.height === '100%') {
+				navbar.style.height = '0'
+				navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
+			} else {
+				navbar.style.height = '100%'
+				navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
+			}
+		} else if (element === 'search') {
+			navbar.style.height = '0'
+			navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
+			if (searchbar.style.height === '100%') {
+				searchbar.style.height = '0'
+				searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png)'
+			} else {
+				searchbar.style.height = '100%'
+				searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
+			}
 		}
 	}
 </script>
