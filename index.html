@@ -9,26 +9,32 @@
 </head>
 <body>
 <header class='header'>
-	<button class='header__button_more' onclick="toggle('nav')"></button>
-	<a class='header__link link'>Shop</a>
+	<button class='header__button_nav' onclick="toggle('nav')"></button>
+	<button class='header__button_shop link' onmouseover='showShop()'>Shop</button>
 	<a class='header__logo' href='#'>Magazine</a>
-	<a class='header__link link'>Cart</a>
+	<button class='header__button_cart link'>Cart</button>
 	<button class='header__button_search' onclick="toggle('search')"></button>
 </header>
-<nav class='navbar'>
-	<div class='navbar__container'>
-		<a href='#section_stories' class='link navbar__link'>Stories</a>
-		<a href='#section_films' class='link navbar__link'>Films</a>
-		<a href='#' class='link navbar__link'>Shop</a>
-		<a href='#section_posts' class='link navbar__link'>Blog</a>
-		<a href='#section_about' class='link navbar__link'>About</a>
-		<a href='#' class='navbar__button'>Request interview</a>
+<nav class='nav'>
+	<div class='nav__container'>
+		<a href='#section_stories' class='link nav__link'>Stories</a>
+		<a href='#section_films' class='link nav__link'>Films</a>
+		<a href='#' class='link nav__link'>Shop</a>
+		<a href='#section_posts' class='link nav__link'>Blog</a>
+		<a href='#section_about' class='link nav__link'>About</a>
+		<a href='#' class='nav__button'>Request interview</a>
 	</div>
 </nav>
-<div class='searchbar'>
-	<div class='searchbar__container'>
-		<input class='searchbar__input' type='text' placeholder='Search Magazine'/>
-		<button class='searchbar__button'></button>
+<div class='shop'>
+	<a href='#' class='product'>
+		<img class='product__img' src='https://images.unsplash.com/photo-1551554747-27561345a615?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bWFnYXppbmV8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
+	</a>
+	<a class='link' href=''>See products</a>
+</div>
+<div class='search'>
+	<div class='search__container'>
+		<input class='search__input' type='text' placeholder='Search Magazine'/>
+		<button class='search__button'></button>
 	</div>
 </div>
 <main>
@@ -165,6 +171,12 @@
 </html>
 
 <script>
+
+	function showShop(){
+		let shop = document.querySelector('.shop')
+		shop.style.height = '300px'
+	}
+
 	let slideIndex
 	showSlides(slideIndex = 1);
 
@@ -183,28 +195,28 @@
 	}
 
 	function toggle(element) {
-		let navbar = document.querySelector('.navbar')
-		let navbtn = document.querySelector('.header__button_more')
-		let searchbar = document.querySelector('.searchbar')
+		let nav = document.querySelector('.nav')
+		let navbtn = document.querySelector('.header__button_nav')
+		let search = document.querySelector('.search')
 		let searchbtn = document.querySelector('.header__button_search')
 		if (element === 'nav') {
-			searchbar.style.height = '0'
+			search.style.height = '0'
 			searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png)'
-			if (navbar.style.height === '100%') {
-				navbar.style.height = '0'
+			if (nav.style.height === '100%') {
+				nav.style.height = '0'
 				navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
 			} else {
-				navbar.style.height = '100%'
+				nav.style.height = '100%'
 				navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
 			}
 		} else if (element === 'search') {
-			navbar.style.height = '0'
+			nav.style.height = '0'
 			navbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png)'
-			if (searchbar.style.height === '100%') {
-				searchbar.style.height = '0'
+			if (search.style.height === '100%') {
+				search.style.height = '0'
 				searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png)'
 			} else {
-				searchbar.style.height = '100%'
+				search.style.height = '100%'
 				searchbtn.style.backgroundImage = 'url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_close_48px-48.png)'
 			}
 		}

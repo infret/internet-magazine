@@ -58,11 +58,11 @@ a {
     transform: rotate(45deg);
 }
 
-.link, .card, .select, .header__button_more, .header__button_search, .slide__button, .slide__button_next, .slide__button_prev, .navbar__button, .searchbar__button {
+.link, .card, .select, .header__button_nav, .header__button_search, .slide__button, .slide__button_next, .slide__button_prev, .nav__button, .search__button {
     transition: 0.2s ease;
 }
 
-.link:hover, .card:hover, .select:hover, .header__button_more:hover, .header__button_search:hover {
+.link:hover, .card:hover, .select:hover, .header__button_nav:hover, .header__button_search:hover {
     opacity: 50%;
 }
 
@@ -103,7 +103,7 @@ a {
     font-family: serif;
 }
 
-.header__button_more, .header__button_search {
+.header__button_nav, .header__button_search {
     background-color: transparent;
     border: none;
     outline: none;
@@ -115,16 +115,46 @@ a {
     height: 26px;
 }
 
-.header__button_more {
+.header__button_nav {
     transition: 0.5s ease;
     background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-48.png);
+}
+
+.header__button_shop, .header__button_cart {
+    background-color: transparent;
+    border: none;
+    height: 20px;
+}
+
+.header__button_shop:hover::before, .header__button_cart:hover::before {
+    content: '';
+    height: 7px;
+    width: 2px;
+    position: absolute;
+    right: -5px;
+    top: 7px;
+    background-color: var(--black);
+    transform: rotate(-45deg);
+    transition: 0.1s ease;
+}
+
+.header__button_shop:hover::after, .header__button_cart:hover::after {
+    content: '';
+    height: 7px;
+    width: 2px;
+    position: absolute;
+    right: -9px;
+    bottom: 6px;
+    background-color: var(--black);
+    transform: rotate(45deg);
+    transition: 0.1s ease;
 }
 
 .header__button_search {
     background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_search_48px-48.png);
 }
 
-.navbar {
+.nav {
     height: 0;
     overflow: hidden;
     width: 100%;
@@ -136,7 +166,7 @@ a {
     transition: height 0.5s;
 }
 
-.navbar__container {
+.nav__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,17 +174,17 @@ a {
     width: 280px;
 }
 
-.navbar__link {
+.nav__link {
     font-size: 30px;
     margin: 20px;
     font-weight: normal;
 }
 
-.navbar__link::after, .navbar__link::before {
+.nav__link::after, .nav__link::before {
     display: none;
 }
 
-.navbar__button {
+.nav__button {
     background-color: var(--green);
     text-align: center;
     width: 200px;
@@ -167,12 +197,39 @@ a {
     border: 2px solid var(--green)
 }
 
-.navbar__button:hover, .searchbar__button:hover {
+.nav__button:hover, .search__button:hover {
     color: var(--green);
     background-color: white;
 }
 
-.searchbar {
+.shop {
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    opacity: 98%;
+    background-color: white;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    transition: height 0.5s;
+    padding-top: 50px;
+}
+
+.product {
+    width: 200px;
+    height: 200px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__img {
+    width: 150px;
+    height: 150px;
+}
+
+.search {
     height: 0;
     overflow: hidden;
     width: 100%;
@@ -187,20 +244,20 @@ a {
     align-items: center;
 }
 
-.searchbar__container {
+.search__container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 42px;
 }
 
-.searchbar__input {
+.search__input {
     font-family: serif;
     border: none;
     font-size: 30px;
 }
 
-.searchbar__button {
+.search__button {
     background-color: var(--green);
     border: 2px solid var(--green);
     width: 42px;
@@ -208,7 +265,7 @@ a {
     position: relative;
 }
 
-.searchbar__button::before {
+.search__button::before {
     content: '';
     left: 48%;
     right: 0;
@@ -220,7 +277,7 @@ a {
     top: 45%;
 }
 
-.searchbar__button::after {
+.search__button::after {
     content: '';
     left: 48%;
     right: 0;
@@ -232,7 +289,7 @@ a {
     top: 30%;
 }
 
-.searchbar__button:hover::after, .searchbar__button:hover::before {
+.search__button:hover::after, .search__button:hover::before {
     background-color: var(--green);
 }
 
@@ -467,7 +524,7 @@ a {
 }
 
 @media (max-width: 720px) {
-    .header__link, .slide__button_prev, .slide__button_next {
+    .header__button_shop, .header__button_cart, .slide__button_prev, .slide__button_next {
         display: none;
     }
 
