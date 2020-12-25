@@ -44,7 +44,9 @@ a {
     right: -6px;
     background-color: black;
     transform: rotate(-45deg);
-    top: 5px;
+    bottom: 0;
+    top: -3px;
+    margin: auto 0;
 }
 
 .link::after {
@@ -53,12 +55,14 @@ a {
     width: 2px;
     position: absolute;
     right: -6px;
-    bottom: 5px;
+    top: 3px;
+    bottom: 0;
+    margin: auto 0;
     background-color: black;
     transform: rotate(45deg);
 }
 
-.link, .card, .select, .header__button_nav, .header__button_search, .slide__button, .slide__button_next, .slide__button_prev, .nav__button, .search__button {
+.link, .card, .select, .header__button_nav, .header__button_search, .slide__button, .slide__button_next, .slide__button_prev, .nav__button, .product, .search__button {
     transition: 0.2s ease;
 }
 
@@ -91,7 +95,7 @@ a {
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     background-color: white;
     align-items: center;
@@ -123,31 +127,19 @@ a {
 .header__button_shop, .header__button_cart {
     background-color: transparent;
     border: none;
-    height: 20px;
+    height: 50px;
+    margin: 0;
+    padding: 12px;
 }
 
 .header__button_shop:hover::before, .header__button_cart:hover::before {
-    content: '';
-    height: 7px;
-    width: 2px;
-    position: absolute;
     right: -5px;
-    top: 7px;
-    background-color: var(--black);
-    transform: rotate(-45deg);
-    transition: 0.1s ease;
+    top: 1px;
 }
 
 .header__button_shop:hover::after, .header__button_cart:hover::after {
-    content: '';
-    height: 7px;
-    width: 2px;
-    position: absolute;
-    right: -9px;
-    bottom: 6px;
-    background-color: var(--black);
-    transform: rotate(45deg);
-    transition: 0.1s ease;
+    right: -8px;
+    top: 1px;
 }
 
 .header__button_search {
@@ -158,9 +150,8 @@ a {
     height: 0;
     overflow: hidden;
     width: 100%;
-    opacity: 98%;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
     transition: height 0.5s;
@@ -206,34 +197,55 @@ a {
     height: 0;
     overflow: hidden;
     width: 100%;
-    opacity: 98%;
     background-color: white;
     z-index: 1;
     position: fixed;
     top: 0;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
     transition: height 0.5s;
-    padding-top: 50px;
 }
 
 .product {
-    width: 200px;
-    height: 200px;
+    width: 25%;
+    height: 25vw;
     background-color: gainsboro;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.product:hover::after {
+    content: 'Magazine';
+    font-family: serif;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 40%;
+    font-size: 3vw;
+    opacity: 1;
+    color: var(--black);
 }
 
 .product__img {
-    width: 150px;
-    height: 150px;
+    width: 70%;
+    height: 70%;
+}
+
+.shop__link {
+    margin: 12px auto;
 }
 
 .search {
     height: 0;
     overflow: hidden;
     width: 100%;
-    opacity: 98%;
     background-color: white;
     z-index: 1;
     position: fixed;
@@ -303,10 +315,10 @@ a {
 
 @keyframes fade {
     0% {
-        opacity: 0
+        opacity: .4;
     }
     100% {
-        opacity: 98%
+        opacity: 1;
     }
 }
 
@@ -524,7 +536,7 @@ a {
 }
 
 @media (max-width: 720px) {
-    .header__button_shop, .header__button_cart, .slide__button_prev, .slide__button_next {
+    .header__button_shop, .header__button_cart, .slide__button_prev, .slide__button_next, .shop, .cart {
         display: none;
     }
 

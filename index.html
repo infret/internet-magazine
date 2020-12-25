@@ -10,7 +10,7 @@
 <body>
 <header class='header'>
 	<button class='header__button_nav' onclick="toggle('nav')"></button>
-	<button class='header__button_shop link' onmouseover='showShop()'>Shop</button>
+	<button class='header__button_shop link' onmouseover='showShop()' onmouseleave='hideShop()'>Shop</button>
 	<a class='header__logo' href='#'>Magazine</a>
 	<button class='header__button_cart link'>Cart</button>
 	<button class='header__button_search' onclick="toggle('search')"></button>
@@ -25,11 +25,20 @@
 		<a href='#' class='nav__button'>Request interview</a>
 	</div>
 </nav>
-<div class='shop'>
+<div class='shop' onmouseover='showShop()' onmouseleave='hideShop()'>
 	<a href='#' class='product'>
 		<img class='product__img' src='https://images.unsplash.com/photo-1551554747-27561345a615?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bWFnYXppbmV8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
 	</a>
-	<a class='link' href=''>See products</a>
+	<a href='#' class='product'>
+		<img class='product__img' src='https://images.unsplash.com/photo-1568371676223-7e6fc0fa62b1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjN8fG1hZ2F6aW5lfGVufDB8MnwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
+	</a>
+	<a href='#' class='product'>
+		<img class='product__img' src='https://images.unsplash.com/photo-1511499963164-bbacc7bbe9f0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjh8fG1hZ2F6aW5lfGVufDB8MnwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
+	</a>
+	<a href='#' class='product'>
+		<img class='product__img' src='https://images.unsplash.com/photo-1606985261850-86a52d5cd447?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8am91cm5hbHxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
+	</a>
+	<a class='link shop__link' href=''>See products</a>
 </div>
 <div class='search'>
 	<div class='search__container'>
@@ -76,7 +85,7 @@
 				<option value="barber">Barber</option>
 				<option value="bees">Bees</option>
 			</select>
-			<a class='link ' href='#section_films'>See films</a>
+			<a class='link' href='#section_films'>See films</a>
 		</div>
 		<div class='cards'>
 			<a class='card' href='#'>
@@ -172,10 +181,16 @@
 
 <script>
 
-	function showShop(){
+	function showShop() {
 		let shop = document.querySelector('.shop')
-		shop.style.height = '300px'
+		shop.style.height = 'calc(25vw + 42px)'
 	}
+
+	function hideShop() {
+		let shop = document.querySelector('.shop')
+		shop.style.height = '0'
+	}
+
 
 	let slideIndex
 	showSlides(slideIndex = 1);
