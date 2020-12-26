@@ -12,7 +12,7 @@
 	<button class='header__button_nav' onclick="toggle('nav')"></button>
 	<button class='header__button_shop link' onmouseover='showShop()' onmouseleave='hideShop()'>Shop</button>
 	<a class='header__logo' href='#'>Magazine</a>
-	<button class='header__button_cart link'>Cart</button>
+	<button class='header__button_cart link' onmouseover='showCart()' onmouseleave='hideCart()'>Cart</button>
 	<button class='header__button_search' onclick="toggle('search')"></button>
 </header>
 <nav class='nav'>
@@ -39,6 +39,22 @@
 		<img class='product__img' src='https://images.unsplash.com/photo-1606985261850-86a52d5cd447?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8am91cm5hbHxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
 	</a>
 	<a class='link shop__link' href=''>See products</a>
+</div>
+<div class='cart' onmouseover='showCart()' onmouseleave='hideCart()'>
+	<div class='cart__container'>
+		<h4 class='cart__heading heading'>Your cart</h4>
+		<p class='price'>$9</p>
+	</div>
+	<div class='cart__purchases'>
+		<div class='purchase'>
+			<img class='purchase__img' src='https://images.unsplash.com/photo-1551554747-27561345a615?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bWFnYXppbmV8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60' alt='Magazine'>
+			<div class='purchase__desc'>
+				<p class='purchase__name'>Magazine</p>
+				<p class='price'>$9</p>
+			</div>
+		</div>
+	</div>
+	<a href='#' class='link shop__link'>Checkout</a>
 </div>
 <div class='search'>
 	<div class='search__container'>
@@ -183,12 +199,30 @@
 
 	function showShop() {
 		let shop = document.querySelector('.shop')
+		let shopbtn = document.querySelector('.header__button_shop')
 		shop.style.height = 'calc(25vw + 42px)'
+		shopbtn.classList.add('link_expanded')
 	}
 
 	function hideShop() {
 		let shop = document.querySelector('.shop')
+		let shopbtn = document.querySelector('.header__button_shop')
 		shop.style.height = '0'
+		shopbtn.classList.remove('link_expanded')
+	}
+
+	function showCart() {
+		let cart = document.querySelector('.cart')
+		let cartbtn = document.querySelector('.header__button_cart')
+		cart.style.height = 'calc(25vw + 42px)'
+		cartbtn.classList.add('link_expanded')
+	}
+
+	function hideCart() {
+		let cart = document.querySelector('.cart')
+		let cartbtn = document.querySelector('.header__button_cart')
+		cart.style.height = '0'
+		cartbtn.classList.remove('link_expanded')
 	}
 
 
