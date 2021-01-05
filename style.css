@@ -27,16 +27,14 @@ a {
 }
 
 .link {
-    height: 20px;
     font-size: 15px;
     text-transform: uppercase;
-    display: flex;
     align-items: center;
     font-weight: bold;
     padding: 6px;
     position: relative;
     margin: 12px;
-
+    display: inline;
 }
 
 .link::before {
@@ -47,9 +45,7 @@ a {
     right: -6px;
     background-color: var(--black);
     transform: rotate(-45deg);
-    bottom: 0;
-    top: -3px;
-    margin: auto 0;
+    top: 32%;
 }
 
 .link::after {
@@ -58,21 +54,19 @@ a {
     width: 2px;
     position: absolute;
     right: -6px;
-    top: 3px;
-    bottom: 0;
-    margin: auto 0;
     background-color: var(--black);
     transform: rotate(45deg);
+    top: 43%;
 }
 
 .link_expanded::before {
-    right: -5px;
-    top: 1px;
+    right: -4px;
+    top: 37%;
 }
 
 .link_expanded::after {
-    right: -8px;
-    top: 1px;
+    right: -7px;
+    top: 37%;
 }
 
 .link, .card, .select, .header__button_nav, .header__button_search, .slide__button, .slide__button_next, .slide__button_prev, .nav__button, .product, .search__button {
@@ -101,7 +95,7 @@ a {
 }
 
 .section {
-    padding: 24px;
+    padding: 24px 12px;
 }
 
 .header {
@@ -140,9 +134,7 @@ a {
 .header__button_shop, .header__button_cart {
     background-color: transparent;
     border: none;
-    height: 50px;
-    margin: 0;
-    padding: 12px;
+    height: 100%;
 }
 
 .header__button_search {
@@ -345,7 +337,8 @@ a {
 .search__input {
     font-family: serif;
     border: none;
-    font-size: 30px;
+    font-size: 25px;
+    width: 240px;
 }
 
 .search__button {
@@ -404,14 +397,14 @@ a {
 .slide__heading {
     width: 240px;
     text-align: center;
-    font-size: 31px;
+    font-size: 30px;
     color: white;
     font-family: serif;
     position: absolute;
-    top: 60vh;
+    top: 60%;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .slide__button {
@@ -527,9 +520,16 @@ a {
     margin: 12px;
 }
 
+.link_ref {
+    display: block;
+    text-transform: lowercase;
+    font-family: serif;
+    text-align: center;
+}
+
 .card {
     margin: 12px;
-    width: 45%;
+    width: 46%;
     background-color: white;
     border: none;
     box-shadow: var(--elevation);
@@ -607,11 +607,14 @@ a {
 .footer {
     min-height: 100px;
     background-color: gainsboro;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
     padding: 24px;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 720px) {
