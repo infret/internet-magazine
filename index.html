@@ -207,6 +207,9 @@
 </html>
 
 <script>
+	let slideIndex
+	showSlides(slideIndex = 1);
+
 	function show(element) {
 		let shop = document.querySelector('.shop')
 		let shopbtn = document.querySelector('.header__button_shop')
@@ -214,10 +217,10 @@
 		let cartbtn = document.querySelector('.header__button_cart')
 
 		if (element === 'shop') {
-			shop.style.height = 'calc(25vw + 42px)'
+			shop.style.height = 'calc(25vw + 52px)'
 			shopbtn.classList.add('link_expanded')
 		} else {
-			cart.style.height = 'calc(25vw + 42px)'
+			cart.style.height = 'calc(25vw + 52px)'
 			cartbtn.classList.add('link_expanded')
 		}
 	}
@@ -235,9 +238,6 @@
 			cartbtn.classList.remove('link_expanded')
 		}
 	}
-
-	let slideIndex
-	showSlides(slideIndex = 1);
 
 	function showSlides(n) {
 		let slides = document.querySelectorAll(".slide");

@@ -153,6 +153,7 @@ a {
     background-color: white;
     z-index: 2;
     position: fixed;
+    padding-top: 70px;
     top: 0;
     transition: height 0.5s;
 }
@@ -161,7 +162,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20vh auto;
+    margin: auto;
     width: 280px;
 }
 
